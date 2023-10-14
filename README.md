@@ -19,5 +19,5 @@ It's in alpha, but if you want it download it from GitHub Actions
     - [ ] Block of Ketchup - Used to make ketchup portal for ketchup dimension
     - [ ] Ketchup Addiction - Makes food give half the nutrition, and doubles ketchup's nutrition
     - [ ] Ketchup Dimension - k e t c h u p
- - [ ] Potion of Wrath - Decreases your attack speed.
+ - [ ] Potion of Wrath - Increases your attack speed.
  - [ ] Paint
