@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.andrewd1.something.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "SomethingMod.refmap.json",
+  "mixins": [
+  ],
+  "client": [
+    "TestMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

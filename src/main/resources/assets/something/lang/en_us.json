@@ -1,0 +1,19 @@
+{
+  "creative_tab.something": "Something Mod Items (No Potions)",
+
+  "item.something.tomato_soup": "Tomato Soup",
+
+  "effect.something.explode": "Explode",
+  "item.minecraft.potion.effect.explode": "Potion of Explode",
+  "item.minecraft.potion.effect.explode_2": "Potion of Explode",
+  "item.minecraft.potion.effect.explode_duration": "Potion of Explode",
+  "item.minecraft.splash_potion.effect.explode": "Splash Potion of Explode",
+  "item.minecraft.splash_potion.effect.explode_2": "Splash Potion of Explode",
+  "item.minecraft.splash_potion.effect.explode_duration": "Splash Potion of Explode",
+  "item.minecraft.lingering_potion.effect.explode": "Lingering Potion of Explode",
+  "item.minecraft.lingering_potion.effect.explode_2": "Lingering Potion of Explode",
+  "item.minecraft.lingering_potion.effect.explode_duration": "Lingering Potion of Explode",
+  "item.minecraft.tipped_arrow.effect.explode": "Arrow of Explode",
+  "item.minecraft.tipped_arrow.effect.explode_2": "Arrow of Explode",
+  "item.minecraft.tipped_arrow.effect.explode_duration": "Arrow of Explode"
+}
