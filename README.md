@@ -21,3 +21,4 @@ It's in alpha, but if you want it download it from GitHub Actions
     - [ ] Ketchup Dimension - k e t c h u p
  - [ ] Potion of Wrath - Increases your attack speed.
  - [ ] Paint
+ - [ ] salb
