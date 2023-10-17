@@ -20,5 +20,17 @@
   "item.minecraft.tipped_arrow.effect.explode_2": "Arrow of Explode",
   "item.minecraft.tipped_arrow.effect.explode_duration": "Arrow of Explode",
 
-  "effect.something.wrath": "Wrath"
+  "effect.something.wrath": "Wrath",
+  "item.minecraft.potion.effect.wrath": "Potion of Wrath",
+  "item.minecraft.potion.effect.wrath_2": "Potion of Wrath",
+  "item.minecraft.potion.effect.wrath_duration": "Potion of Wrath",
+  "item.minecraft.splash_potion.effect.wrath": "Splash Potion of Wrath",
+  "item.minecraft.splash_potion.effect.wrath_2": "Splash Potion of Wrath",
+  "item.minecraft.splash_potion.effect.wrath_duration": "Splash Potion of Wrath",
+  "item.minecraft.lingering_potion.effect.wrath": "Lingering Potion of Wrath",
+  "item.minecraft.lingering_potion.effect.wrath_2": "Lingering Potion of Wrath",
+  "item.minecraft.lingering_potion.effect.wrath_duration": "Lingering Potion of Wrath",
+  "item.minecraft.tipped_arrow.effect.wrath": "Arrow of Wrath",
+  "item.minecraft.tipped_arrow.effect.wrath_2": "Arrow of Wrath",
+  "item.minecraft.tipped_arrow.effect.wrath_duration": "Arrow of Wrath"
 }
