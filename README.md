@@ -11,6 +11,8 @@ It's in alpha, but if you want it download it from GitHub Actions
  - [x] Tomato soup - Goofy food
  - [x] Potion of Explode - Detonates when the effect runs out.
        Explosion power depends on the level of the effect.
+ - [x] Potion of Wrath - Increases your attack speed.
+ - [x] salb
 
 ## TODO List
  - [ ] Tomato - Edible and used to craft tomato soup and ketchup
@@ -19,6 +21,4 @@ It's in alpha, but if you want it download it from GitHub Actions
     - [ ] Block of Ketchup - Used to make ketchup portal for ketchup dimension
     - [ ] Ketchup Addiction - Makes food give half the nutrition, and doubles ketchup's nutrition
     - [ ] Ketchup Dimension - k e t c h u p
- - [ ] Potion of Wrath - Increases your attack speed.
  - [ ] Paint
- - [ ] salb
