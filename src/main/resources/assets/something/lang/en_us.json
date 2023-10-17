@@ -1,7 +1,10 @@
 {
-  "creative_tab.something": "Something Mod Items (No Potions)",
+  "creative_tab.something": "Something Mod",
 
   "item.something.tomato_soup": "Tomato Soup",
+
+  "block.something.ketchup_block": "Block of Ketchup",
+  "block.something.salb": "Salb",
 
   "effect.something.explode": "Explode",
   "item.minecraft.potion.effect.explode": "Potion of Explode",
@@ -15,5 +18,7 @@
   "item.minecraft.lingering_potion.effect.explode_duration": "Lingering Potion of Explode",
   "item.minecraft.tipped_arrow.effect.explode": "Arrow of Explode",
   "item.minecraft.tipped_arrow.effect.explode_2": "Arrow of Explode",
-  "item.minecraft.tipped_arrow.effect.explode_duration": "Arrow of Explode"
+  "item.minecraft.tipped_arrow.effect.explode_duration": "Arrow of Explode",
+
+  "effect.something.wrath": "Wrath"
 }

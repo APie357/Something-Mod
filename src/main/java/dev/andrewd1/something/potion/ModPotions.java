@@ -21,6 +21,13 @@ public class ModPotions {
     public static final RegistryObject<Potion> EXPLODE_D =
             potion("explode_duration", ModEffects.EXPLODE, 12000);
 
+    public static final RegistryObject<Potion> WRATH =
+            potion("wrath", ModEffects.WRATH, 6000);
+    public static final RegistryObject<Potion> WRATH_II =
+            potion("wrath_2", ModEffects.WRATH, 6000, 2);
+    public static final RegistryObject<Potion> WRATH_D =
+            potion("wrath_duration", ModEffects.WRATH, 12000);
+
     public static void register(IEventBus eventBus) {
         POTIONS.register(eventBus);
     }

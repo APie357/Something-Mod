@@ -1,9 +1,11 @@
 package dev.andrewd1.something.item;
 
 import dev.andrewd1.something.SomethingMod;
+import dev.andrewd1.something.block.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.*;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
@@ -20,6 +22,9 @@ public class ModCreativeTabs {
                             .displayItems((parameters, output) -> {
                                 for (RegistryObject<Item> item : ModItems.ITEMS.getEntries()) {
                                     output.accept(item.get());
+                                }
+                                for (RegistryObject<Block> block : ModBlocks.BLOCKS.getEntries()) {
+                                    output.accept(block.get());
                                 }
                             })
                             .build()

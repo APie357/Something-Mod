@@ -13,6 +13,8 @@ public class ModEffects {
 
     public static final RegistryObject<MobEffect> EXPLODE =
             EFFECTS.register("explode", ExplodeEffect::new);
+    public static final RegistryObject<MobEffect> WRATH =
+            EFFECTS.register("wrath", WrathEffect::new);
 
     public static void register(IEventBus eventBus) {
         EFFECTS.register(eventBus);

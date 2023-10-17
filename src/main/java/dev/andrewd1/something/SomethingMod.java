@@ -1,6 +1,7 @@
 package dev.andrewd1.something;
 
 import com.mojang.logging.LogUtils;
+import dev.andrewd1.something.block.ModBlocks;
 import dev.andrewd1.something.effect.ModEffects;
 import dev.andrewd1.something.item.ModCreativeTabs;
 import dev.andrewd1.something.item.ModItems;
@@ -25,13 +26,20 @@ import org.slf4j.Logger;
 public class SomethingMod {
     public static final String MOD_ID = "something";
     private static final Logger LOGGER = LogUtils.getLogger();
+
     public SomethingMod() {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        LOGGER.info("Registering creative tabs...");
         ModCreativeTabs.register(eventBus);
+        LOGGER.info("Registering effects...");
         ModEffects.register(eventBus);
+        LOGGER.info("Registering potions...");
         ModPotions.register(eventBus);
+        LOGGER.info("Registering items...");
         ModItems.register(eventBus);
+        LOGGER.info("Registering blocks...");
+        ModBlocks.register(eventBus);
         eventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -39,6 +47,7 @@ public class SomethingMod {
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
+        LOGGER.info("Registering vanilla creative tab items...");
         if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
             event.accept(ModItems.TOMATO_SOUP);
         }
@@ -46,23 +55,17 @@ public class SomethingMod {
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
-            BrewingRecipeRegistry.addRecipe(new BrewingRecipe(
-                    Potions.THICK,
-                    Items.TNT,
-                    ModPotions.EXPLODE.get()
-            ));
+            LOGGER.info("Registering potion Recipes...");
 
-            BrewingRecipeRegistry.addRecipe(new BrewingRecipe(
-                    ModPotions.EXPLODE.get(),
-                    Items.REDSTONE,
-                    ModPotions.EXPLODE_D.get()
-            ));
+            // Explode
+            BrewingRecipeRegistry.addRecipe(new BrewingRecipe(Potions.THICK, Items.TNT, ModPotions.EXPLODE.get()));
+            BrewingRecipeRegistry.addRecipe(new BrewingRecipe(ModPotions.EXPLODE.get(), Items.REDSTONE, ModPotions.EXPLODE_D.get()));
+            BrewingRecipeRegistry.addRecipe(new BrewingRecipe(ModPotions.EXPLODE.get(), Items.GLOWSTONE_DUST, ModPotions.EXPLODE_II.get()));
 
-            BrewingRecipeRegistry.addRecipe(new BrewingRecipe(
-                    ModPotions.EXPLODE.get(),
-                    Items.GLOWSTONE_DUST,
-                    ModPotions.EXPLODE_II.get()
-            ));
+            // Wrath
+            BrewingRecipeRegistry.addRecipe(new BrewingRecipe(Potions.STRENGTH, Items.RABBIT_FOOT, ModPotions.WRATH.get()));
+            BrewingRecipeRegistry.addRecipe(new BrewingRecipe(ModPotions.WRATH.get(), Items.REDSTONE, ModPotions.WRATH_D.get()));
+            BrewingRecipeRegistry.addRecipe(new BrewingRecipe(ModPotions.WRATH.get(), Items.GLOWSTONE_DUST, ModPotions.WRATH_II.get()));
         });
     }
 

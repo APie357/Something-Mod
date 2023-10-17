@@ -7,7 +7,7 @@
   "mixins": [
   ],
   "client": [
-    "TestMixin"
+    "SalbMixin"
   ],
   "injectors": {
     "defaultRequire": 1
