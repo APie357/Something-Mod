@@ -2,6 +2,7 @@ package dev.andrewd1.something.block;
 
 import dev.andrewd1.something.util.ModTags;
 import dev.andrewd1.something.world.dimension.ModDimensions;
+import dev.andrewd1.something.world.dimension.portal.KetchupTeleporter;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
@@ -117,7 +118,7 @@ public class KetchupPortal extends Block {
                         if (destinationWorld != null && minecraftserver.isNetherEnabled() && !entity.isPassenger()) {
                             entity.level().getProfiler().push("undergarden_portal");
                             entity.setPortalCooldown();
-                            entity.changeDimension(destinationWorld, new UGTeleporter(destinationWorld));
+                            entity.changeDimension(destinationWorld, new KetchupTeleporter(destinationWorld));
                             entity.level().getProfiler().pop();
                         }
                     }

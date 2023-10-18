@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "axis=z": {
+      "model": "something:block/ketchup_portal_ew"
+    },
+    "axis=x": {
+      "model": "something:block/ketchup_portal_ns"
+    }
+  }
+}

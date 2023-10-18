@@ -7,6 +7,7 @@ import dev.andrewd1.something.item.ModCreativeTabs;
 import dev.andrewd1.something.item.ModItems;
 import dev.andrewd1.something.potion.ModPotions;
 import dev.andrewd1.something.util.BrewingRecipe;
+import dev.andrewd1.something.villager.ModPOIs;
 import dev.andrewd1.something.world.dimension.ModDimensions;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.alchemy.Potions;
@@ -41,6 +42,8 @@ public class SomethingMod {
         ModItems.register(eventBus);
         LOGGER.info("Registering blocks...");
         ModBlocks.register(eventBus);
+        LOGGER.info("Registering POIs...");
+        ModPOIs.register(eventBus);
         LOGGER.info("Registering dimensions...");
         ModDimensions.register();
         eventBus.addListener(this::commonSetup);
