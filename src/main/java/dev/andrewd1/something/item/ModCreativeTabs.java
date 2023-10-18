@@ -24,6 +24,7 @@ public class ModCreativeTabs {
                                     output.accept(item.get());
                                 }
                                 for (RegistryObject<Block> block : ModBlocks.BLOCKS.getEntries()) {
+                                    if (ModBlocks.BLOCKS_NO_ITEM.contains(block)) { continue; }
                                     output.accept(block.get());
                                 }
                             })

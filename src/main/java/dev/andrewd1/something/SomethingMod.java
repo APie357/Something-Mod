@@ -32,8 +32,6 @@ public class SomethingMod {
     public SomethingMod() {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        LOGGER.info("Registering creative tabs...");
-        ModCreativeTabs.register(eventBus);
         LOGGER.info("Registering effects...");
         ModEffects.register(eventBus);
         LOGGER.info("Registering potions...");
@@ -46,6 +44,8 @@ public class SomethingMod {
         ModPOIs.register(eventBus);
         LOGGER.info("Registering dimensions...");
         ModDimensions.register();
+        LOGGER.info("Registering creative tabs...");
+        ModCreativeTabs.register(eventBus);
         eventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);

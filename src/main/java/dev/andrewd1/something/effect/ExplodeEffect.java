@@ -6,6 +6,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
+@SuppressWarnings("resource")
 public class ExplodeEffect extends MobEffect {
     public ExplodeEffect() {
         super(MobEffectCategory.HARMFUL, 0xff4444);

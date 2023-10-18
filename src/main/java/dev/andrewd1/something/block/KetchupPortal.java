@@ -32,6 +32,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.level.BlockEvent;
+import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 
@@ -129,9 +130,9 @@ public class KetchupPortal extends Block {
 
 
     @Override
-    public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
+    public void animateTick(@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, RandomSource random) {
         if (random.nextInt(100) == 0) {
-            level.playLocalSound((double) pos.getX() + 0.5D, (double) pos.getY() + 0.5D, (double) pos.getZ() + 0.5D, SoundEvents.PORTAL_AMBIENT, SoundSource.BLOCKS, 0.5F, random.nextFloat() * 0.4F + 0.8F, false);
+            level.playLocalSound((double) pos.getX() + 0.5D, (double) pos.getY() + 0.5D, (double) pos.getZ() + 0.5D, SoundEvents.RABBIT_JUMP, SoundSource.BLOCKS, 0.5F, random.nextFloat() * 0.4F + 0.8F, false);
         }
 
         for (int i = 0; i < 4; ++i) {
@@ -156,26 +157,20 @@ public class KetchupPortal extends Block {
     }
 
     @Override
-    public ItemStack getCloneItemStack(BlockGetter level, BlockPos pos, BlockState state) {
+    public @NotNull ItemStack getCloneItemStack(@NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull BlockState state) {
         return ItemStack.EMPTY;
     }
 
     @Override
-    public BlockState rotate(BlockState state, Rotation rot) {
-        switch (rot) {
-            case COUNTERCLOCKWISE_90:
-            case CLOCKWISE_90:
-                switch (state.getValue(AXIS)) {
-                    case Z:
-                        return state.setValue(AXIS, X);
-                    case X:
-                        return state.setValue(AXIS, Z);
-                    default:
-                        return state;
-                }
-            default:
-                return state;
-        }
+    public @NotNull BlockState rotate(@NotNull BlockState state, Rotation rot) {
+        return switch (rot) {
+            case COUNTERCLOCKWISE_90, CLOCKWISE_90 -> switch (state.getValue(AXIS)) {
+                case Z -> state.setValue(AXIS, X);
+                case X -> state.setValue(AXIS, Z);
+                default -> state;
+            };
+            default -> state;
+        };
     }
 
     @Override
@@ -218,9 +213,9 @@ public class KetchupPortal extends Block {
         }
 
         @Nullable
+        @SuppressWarnings("StatementWithEmptyBody")
         private BlockPos calculateBottomLeft(BlockPos pos) {
-            for (int i = Math.max(this.level.getMinBuildHeight(), pos.getY() - MAX_HEIGHT); pos.getY() > i && isEmpty(this.level.getBlockState(pos.below())); pos = pos.below()) {
-            }
+            for (int i = Math.max(this.level.getMinBuildHeight(), pos.getY() - MAX_HEIGHT); pos.getY() > i && isEmpty(this.level.getBlockState(pos.below())); pos = pos.below());
 
             Direction direction = this.rightDir.getOpposite();
             int j = this.getDistanceUntilEdgeAboveFrame(pos, direction) - 1;

@@ -55,6 +55,7 @@ public class KetchupTeleporter implements ITeleporter {
         });
     }
 
+    @SuppressWarnings("StatementWithEmptyBody")
     public Optional<BlockUtil.FoundRectangle> makePortal(BlockPos pos, Direction.Axis axis) {
         Direction direction = Direction.get(Direction.AxisDirection.POSITIVE, axis);
         double d0 = -1.0D;
@@ -74,8 +75,7 @@ public class KetchupTeleporter implements ITeleporter {
                     checkPos.setY(l);
                     if (this.canPortalReplaceBlock(checkPos)) {
                         int i1;
-                        for(i1 = l; l > this.level.getMinBuildHeight() && this.canPortalReplaceBlock(checkPos.move(Direction.DOWN)); --l) {
-                        }
+                        for (i1 = l; l > this.level.getMinBuildHeight() && this.canPortalReplaceBlock(checkPos.move(Direction.DOWN)); --l);
 
                         if (l + 4 <= i) {
                             int j1 = i1 - l;
