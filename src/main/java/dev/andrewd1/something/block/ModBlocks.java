@@ -21,6 +21,8 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> KETCHUP_BLOCK =
             registerBlock("ketchup_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE)));
+    public static final RegistryObject<Block> KETCHUP_PORTAL =
+            registerBlockWithoutItem("ketchup_portal", KetchupPortal::new);
     public static final RegistryObject<Block> SALB_BLOCK =
             registerBlock("salb", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.SMOOTH_STONE_SLAB)));
 
@@ -36,5 +38,9 @@ public class ModBlocks {
         RegistryObject<T> toReturn = BLOCKS.register(id, supplier);
         registerBlockItem(id, toReturn);
         return toReturn;
+    }
+
+    private static <T extends Block> RegistryObject<T> registerBlockWithoutItem(String id, Supplier<T> supplier) {
+        return BLOCKS.register(id, supplier);
     }
 }

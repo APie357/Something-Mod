@@ -7,6 +7,7 @@ import dev.andrewd1.something.item.ModCreativeTabs;
 import dev.andrewd1.something.item.ModItems;
 import dev.andrewd1.something.potion.ModPotions;
 import dev.andrewd1.something.util.BrewingRecipe;
+import dev.andrewd1.something.world.dimension.ModDimensions;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraftforge.api.distmarker.Dist;
@@ -25,7 +26,7 @@ import org.slf4j.Logger;
 @Mod(SomethingMod.MOD_ID)
 public class SomethingMod {
     public static final String MOD_ID = "something";
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
 
     public SomethingMod() {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -40,6 +41,8 @@ public class SomethingMod {
         ModItems.register(eventBus);
         LOGGER.info("Registering blocks...");
         ModBlocks.register(eventBus);
+        LOGGER.info("Registering dimensions...");
+        ModDimensions.register();
         eventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);

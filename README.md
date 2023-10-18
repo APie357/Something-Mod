@@ -19,8 +19,8 @@ It's in alpha, but if you want it download it from GitHub Actions
  - [ ] Ketchup - Inspired by my friend who loves ketchup
     - [ ] Ketchup Packet - Food, eating too much gives you ketchup addiction status effect
     - [ ] Ketchup Bottle - Food with 8 usages
-    - [ ] Block of Ketchup - Used to make ketchup portal for ketchup dimension
+    - [x] Block of Ketchup - Used to make ketchup portal for ketchup dimension
     - [ ] Ketchup Addiction - Makes food give half the nutrition, and doubles ketchup's nutrition
-    - [ ] Ketchup Dimension - **k e t c h u p**
+    - [ ] Ketchup Dimension - **k e t c h u p** (wip, make lava evaporate and water flow faster)
  - [ ] Paint
  - [ ] Baguette - l o n g bread
