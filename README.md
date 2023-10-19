@@ -23,5 +23,9 @@ It's in alpha, but if you want it download it from GitHub Actions
     - [ ] Ketchup Addiction - Makes food give half the nutrition, and doubles ketchup's nutrition
     - [x] Ketchup Dimension - **k e t c h u p** (wip, make lava evaporate and water flow faster)
     - [ ] Ketchup Portal - Portal to the Ketchup Dimension. (wip, portal block not translucent)
- - [ ] Paint
+ - [ ] Paint - Weirder splash potion
  - [ ] Baguette - l o n g bread
+ - [ ] Oil
+    - [ ] Oil derrick - Used to extract oil.
+    - [ ] Plastic
+    - [ ] Pollution - World gets more polluted with more oil and fuel burned.
