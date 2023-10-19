@@ -55,7 +55,7 @@ public class SomethingMod {
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        LOGGER.info("Registering vanilla creative tab items for tab " + event.getTabKey() + "...");
+        LOGGER.info("Registering vanilla creative tab items for tab " + event.getTabKey().location().getPath() + "...");
         if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
             event.accept(ModItems.TOMATO_SOUP);
             event.accept(ModItems.KETCHUP_PACKET);
