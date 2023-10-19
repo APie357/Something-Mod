@@ -14,9 +14,13 @@ import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
-public class CatalystItem extends Item {
-    public CatalystItem() {
-        super(new Properties().stacksTo(1).rarity(Rarity.EPIC));
+@SuppressWarnings("resource")
+public class KetchupBottle extends Item {
+    public KetchupBottle() {
+        super(new Properties()
+                .stacksTo(1)
+                .food(ModFoods.KETCHUP_BOTTLE)
+        );
     }
 
     @Override

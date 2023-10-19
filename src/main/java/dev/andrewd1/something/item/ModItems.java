@@ -16,7 +16,8 @@ public class ModItems {
             DeferredRegister.create(ForgeRegistries.ITEMS, SomethingMod.MOD_ID);
 
     public static final RegistryObject<Item> TOMATO_SOUP = bowlFood("tomato_soup", ModFoods.TOMATO_SOUP);
-    public static final RegistryObject<Item> KETCHUP_CATALYST = item("ketchup_catalyst", CatalystItem::new);
+    public static final RegistryObject<Item> KETCHUP_PACKET = food("ketchup_packet", ModFoods.KETCHUP_PACKET);
+    public static final RegistryObject<Item> KETCHUP_BOTTLE = item("ketchup_bottle", KetchupBottle::new);
 
 
     public static void register(IEventBus eventBus) {

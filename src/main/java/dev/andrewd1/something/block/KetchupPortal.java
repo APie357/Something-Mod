@@ -132,7 +132,7 @@ public class KetchupPortal extends Block {
     @Override
     public void animateTick(@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, RandomSource random) {
         if (random.nextInt(100) == 0) {
-            level.playLocalSound((double) pos.getX() + 0.5D, (double) pos.getY() + 0.5D, (double) pos.getZ() + 0.5D, SoundEvents.RABBIT_JUMP, SoundSource.BLOCKS, 0.5F, random.nextFloat() * 0.4F + 0.8F, false);
+            level.playLocalSound((double) pos.getX() + 0.5D, (double) pos.getY() + 0.5D, (double) pos.getZ() + 0.5D, SoundEvents.BELL_RESONATE, SoundSource.BLOCKS, 0.5F, random.nextFloat() * 0.4F + 0.8F, false);
         }
 
         for (int i = 0; i < 4; ++i) {

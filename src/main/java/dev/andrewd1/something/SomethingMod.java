@@ -9,6 +9,8 @@ import dev.andrewd1.something.potion.ModPotions;
 import dev.andrewd1.something.util.BrewingRecipe;
 import dev.andrewd1.something.villager.ModPOIs;
 import dev.andrewd1.something.world.dimension.ModDimensions;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraftforge.api.distmarker.Dist;
@@ -53,9 +55,11 @@ public class SomethingMod {
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        LOGGER.info("Registering vanilla creative tab items...");
+        LOGGER.info("Registering vanilla creative tab items for tab " + event.getTabKey() + "...");
         if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
             event.accept(ModItems.TOMATO_SOUP);
+            event.accept(ModItems.KETCHUP_PACKET);
+            event.accept(ModItems.KETCHUP_BOTTLE);
         }
     }
 

@@ -1,7 +1,7 @@
 {
   "textures": {
-    "particle": "tutorialmod:block/kaupen_portal",
-    "portal": "tutorialmod:block/kaupen_portal"
+    "particle": "something:block/ketchup_portal",
+    "portal": "something:block/ketchup_portal"
   },
   "elements": [
     {   "from": [ 0, 0, 6 ],

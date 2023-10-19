@@ -17,10 +17,11 @@ It's in alpha, but if you want it download it from GitHub Actions
 ## TODO List
  - [ ] Tomato - Edible and used to craft tomato soup and ketchup
  - [ ] Ketchup - Inspired by my friend who loves ketchup
-    - [ ] Ketchup Packet - Food, eating too much gives you ketchup addiction status effect
-    - [ ] Ketchup Bottle - Food with 8 usages
+    - [ ] Ketchup Packet - Food, eating too much gives you ketchup addiction status effect (wip, no texture)
+    - [ ] Ketchup Bottle - Food, gives more nutrition than the ketchup packet, used to light ketchup portal (wip, no texture)
     - [x] Block of Ketchup - Used to make ketchup portal for ketchup dimension
     - [ ] Ketchup Addiction - Makes food give half the nutrition, and doubles ketchup's nutrition
-    - [ ] Ketchup Dimension - **k e t c h u p** (wip, make lava evaporate and water flow faster)
+    - [x] Ketchup Dimension - **k e t c h u p** (wip, make lava evaporate and water flow faster)
+    - [ ] Ketchup Portal - Portal to the Ketchup Dimension. (wip, portal block not translucent)
  - [ ] Paint
  - [ ] Baguette - l o n g bread
