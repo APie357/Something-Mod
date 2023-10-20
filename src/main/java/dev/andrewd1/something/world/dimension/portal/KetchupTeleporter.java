@@ -1,6 +1,6 @@
 package dev.andrewd1.something.world.dimension.portal;
 
-import dev.andrewd1.something.block.KetchupPortal;
+import dev.andrewd1.something.block.KetchupPortalBlock;
 import dev.andrewd1.something.block.ModBlocks;
 import dev.andrewd1.something.villager.ModPOIs;
 import dev.andrewd1.something.world.dimension.ModDimensions;
@@ -138,7 +138,7 @@ public class KetchupTeleporter implements ITeleporter {
             }
         }
 
-        BlockState blockstate = ModBlocks.KETCHUP_PORTAL.get().defaultBlockState().setValue(KetchupPortal.AXIS, axis);
+        BlockState blockstate = ModBlocks.KETCHUP_PORTAL.get().defaultBlockState().setValue(KetchupPortalBlock.AXIS, axis);
 
         for(int k2 = 0; k2 < 2; ++k2) {
             for(int l2 = 0; l2 < 3; ++l2) {
@@ -207,7 +207,7 @@ public class KetchupTeleporter implements ITeleporter {
         if (existingPortal.isPresent()) {
             return existingPortal;
         } else {
-            Direction.Axis portalAxis = this.level.getBlockState(entity.portalEntrancePos).getOptionalValue(KetchupPortal.AXIS).orElse(Direction.Axis.X);
+            Direction.Axis portalAxis = this.level.getBlockState(entity.portalEntrancePos).getOptionalValue(KetchupPortalBlock.AXIS).orElse(Direction.Axis.X);
             return this.makePortal(pos, portalAxis);
         }
     }

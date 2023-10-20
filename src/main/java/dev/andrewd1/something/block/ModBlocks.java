@@ -2,7 +2,6 @@ package dev.andrewd1.something.block;
 
 import dev.andrewd1.something.SomethingMod;
 import dev.andrewd1.something.item.ModItems;
-import net.minecraft.util.datafix.fixes.RemoveGolemGossipFix;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -26,9 +25,13 @@ public class ModBlocks {
     public static final RegistryObject<Block> KETCHUP_BLOCK =
             registerBlock("ketchup_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE)));
     public static final RegistryObject<Block> KETCHUP_PORTAL =
-            registerBlockWithoutItem("ketchup_portal", KetchupPortal::new);
+            registerBlockWithoutItem("ketchup_portal", KetchupPortalBlock::new);
     public static final RegistryObject<Block> SALB_BLOCK =
             registerBlock("salb", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.SMOOTH_STONE_SLAB)));
+    public static final RegistryObject<Block> EMPTY_BLOCK =
+            registerBlockWithoutItem("empty", EmptyBlock::new);
+    public static final RegistryObject<Block> OIL_DERRICK =
+            registerBlock("oil_derrick", OilDerrickBlock::new);
 
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);

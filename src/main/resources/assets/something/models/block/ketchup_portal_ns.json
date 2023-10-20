@@ -3,6 +3,7 @@
     "particle": "something:block/ketchup_portal",
     "portal": "something:block/ketchup_portal"
   },
+  "render_type": "translucent",
   "elements": [
     {   "from": [ 0, 0, 6 ],
       "to": [ 16, 16, 10 ],

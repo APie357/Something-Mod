@@ -26,7 +26,7 @@ It's in alpha, but if you want it download it from GitHub Actions
  - [ ] Paint - Weirder splash potion
  - [ ] Baguette - l o n g bread
  - [ ] Oil
-    - [ ] Oil derrick - Used to extract oil.
+    - [ ] Oil derrick - Used to extract oil. (wip)
     - [ ] Plastic
     - [ ] Pollution - World gets more polluted with more oil and fuel burned.
 

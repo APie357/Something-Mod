@@ -40,13 +40,13 @@ import static net.minecraft.core.Direction.Axis.X;
 import static net.minecraft.core.Direction.Axis.Z;
 
 
-public class KetchupPortal extends Block {
+public class KetchupPortalBlock extends Block {
 
     public static final EnumProperty<Direction.Axis> AXIS = BlockStateProperties.HORIZONTAL_AXIS;
     protected static final VoxelShape X_AABB = Block.box(0.0D, 0.0D, 6.0D, 16.0D, 16.0D, 10.0D);
     protected static final VoxelShape Z_AABB = Block.box(6.0D, 0.0D, 0.0D, 10.0D, 16.0D, 16.0D);
 
-    public KetchupPortal() {
+    public KetchupPortalBlock() {
         super(Properties.of()
                 .pushReaction(PushReaction.BLOCK)
                 .strength(-1F)
@@ -69,7 +69,7 @@ public class KetchupPortal extends Block {
     }
 
     public boolean trySpawnPortal(LevelAccessor level, BlockPos pos) {
-        KetchupPortal.UGPortalShape size = this.isPortal(level, pos);
+        KetchupPortalBlock.UGPortalShape size = this.isPortal(level, pos);
         if (size != null && !onTrySpawnPortal(level, pos, size)) {
             size.createPortalBlocks();
             return true;
@@ -78,17 +78,17 @@ public class KetchupPortal extends Block {
         }
     }
 
-    public static boolean onTrySpawnPortal(LevelAccessor world, BlockPos pos, KetchupPortal.UGPortalShape size) {
+    public static boolean onTrySpawnPortal(LevelAccessor world, BlockPos pos, KetchupPortalBlock.UGPortalShape size) {
         return MinecraftForge.EVENT_BUS.post(new BlockEvent.PortalSpawnEvent(world, pos, world.getBlockState(pos), size));
     }
 
     @Nullable
-    public KetchupPortal.UGPortalShape isPortal(LevelAccessor level, BlockPos pos) {
-        KetchupPortal.UGPortalShape UndergardenPortalBlock$size = new UGPortalShape(level, pos, X);
+    public KetchupPortalBlock.UGPortalShape isPortal(LevelAccessor level, BlockPos pos) {
+        KetchupPortalBlock.UGPortalShape UndergardenPortalBlock$size = new UGPortalShape(level, pos, X);
         if (UndergardenPortalBlock$size.isValid() && UndergardenPortalBlock$size.numPortalBlocks == 0) {
             return UndergardenPortalBlock$size;
         } else {
-            KetchupPortal.UGPortalShape UndergardenPortalBlock$size1 = new UGPortalShape(level, pos, Z);
+            KetchupPortalBlock.UGPortalShape UndergardenPortalBlock$size1 = new UGPortalShape(level, pos, Z);
             return UndergardenPortalBlock$size1.isValid() && UndergardenPortalBlock$size1.numPortalBlocks == 0 ? UndergardenPortalBlock$size1 : null;
         }
     }
