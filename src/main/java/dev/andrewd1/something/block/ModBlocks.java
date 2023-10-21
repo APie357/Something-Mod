@@ -22,6 +22,8 @@ public class ModBlocks {
     public static final ArrayList<RegistryObject<Block>> BLOCKS_NO_ITEM =
             new ArrayList<>();
 
+    public static final RegistryObject<Block> DEBUG_BLOCK =
+            registerBlock("debug", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BEDROCK)));
     public static final RegistryObject<Block> KETCHUP_BLOCK =
             registerBlock("ketchup_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE)));
     public static final RegistryObject<Block> KETCHUP_PORTAL =
