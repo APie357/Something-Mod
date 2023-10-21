@@ -1,6 +1,6 @@
 package dev.andrewd1.something.world.dimension.portal;
 
-import dev.andrewd1.something.block.KetchupPortalBlock;
+import dev.andrewd1.something.block.custom.KetchupPortalBlock;
 import dev.andrewd1.something.block.ModBlocks;
 import dev.andrewd1.something.villager.ModPOIs;
 import dev.andrewd1.something.world.dimension.ModDimensions;

@@ -1,6 +1,8 @@
 package dev.andrewd1.something.effect;
 
 import dev.andrewd1.something.SomethingMod;
+import dev.andrewd1.something.effect.custom.ExplodeEffect;
+import dev.andrewd1.something.effect.custom.WrathEffect;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;

@@ -1,4 +1,4 @@
-package dev.andrewd1.something.effect;
+package dev.andrewd1.something.effect.custom;
 
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;

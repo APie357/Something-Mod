@@ -1,5 +1,6 @@
-package dev.andrewd1.something.block;
+package dev.andrewd1.something.block.custom;
 
+import dev.andrewd1.something.block.ModBlocks;
 import dev.andrewd1.something.util.ModTags;
 import dev.andrewd1.something.world.dimension.ModDimensions;
 import dev.andrewd1.something.world.dimension.portal.KetchupTeleporter;

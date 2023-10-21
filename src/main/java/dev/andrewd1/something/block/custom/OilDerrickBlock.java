@@ -1,5 +1,6 @@
-package dev.andrewd1.something.block;
+package dev.andrewd1.something.block.custom;
 
+import dev.andrewd1.something.block.ModBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;

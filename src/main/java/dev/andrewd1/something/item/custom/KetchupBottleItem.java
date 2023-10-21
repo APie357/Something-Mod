@@ -1,7 +1,8 @@
-package dev.andrewd1.something.item;
+package dev.andrewd1.something.item.custom;
 
-import dev.andrewd1.something.block.KetchupPortalBlock;
+import dev.andrewd1.something.block.custom.KetchupPortalBlock;
 import dev.andrewd1.something.block.ModBlocks;
+import dev.andrewd1.something.item.ModFoods;
 import dev.andrewd1.something.world.dimension.ModDimensions;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

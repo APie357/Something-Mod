@@ -1,6 +1,7 @@
 package dev.andrewd1.something.item;
 
 import dev.andrewd1.something.SomethingMod;
+import dev.andrewd1.something.item.custom.KetchupBottleItem;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BowlFoodItem;
 import net.minecraft.world.item.Item;

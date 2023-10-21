@@ -1,6 +1,9 @@
 package dev.andrewd1.something.block;
 
 import dev.andrewd1.something.SomethingMod;
+import dev.andrewd1.something.block.custom.EmptyBlock;
+import dev.andrewd1.something.block.custom.KetchupPortalBlock;
+import dev.andrewd1.something.block.custom.OilDerrickBlock;
 import dev.andrewd1.something.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;

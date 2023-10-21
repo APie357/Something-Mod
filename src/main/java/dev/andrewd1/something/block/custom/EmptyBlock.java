@@ -1,4 +1,4 @@
-package dev.andrewd1.something.block;
+package dev.andrewd1.something.block.custom;
 
 import net.minecraft.world.level.block.BarrierBlock;
 import net.minecraft.world.level.block.Blocks;
