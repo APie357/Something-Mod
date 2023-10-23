@@ -1,15 +1,15 @@
 package dev.andrewd1.something.block.custom;
 
+import dev.andrewd1.something.block.MultiBlockMachine;
 import net.minecraft.core.BlockPos;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.block.BarrierBlock;
 import net.minecraft.world.level.block.BaseEntityBlock;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import org.jetbrains.annotations.NotNull;
@@ -60,7 +60,9 @@ public class EmptyBlock extends BaseEntityBlock {
 
     @Override
     public void destroy(@NotNull LevelAccessor pLevel, @NotNull BlockPos pPos, @NotNull BlockState pState) {
-        BlockPos originPos = pPos.offset(pState.getValue(X_OFFSET), pState.getValue(Y_OFFSET), pState.getValue(Z_OFFSET));
+        BlockPos originPos = pPos.offset(getXOffset(pState), getYOffset(pState), getZOffset(pState));
+        MultiBlockMachine origin = (MultiBlockMachine) pLevel.getBlockState(pPos).getBlock();
+        origin.destroy(pLevel, originPos);
     }
 
     public int getXOffset(BlockState state) {
@@ -73,5 +75,18 @@ public class EmptyBlock extends BaseEntityBlock {
 
     public int getZOffset(BlockState state) {
         return state.getValue(Z_OFFSET) - state.getValue(NZ_OFFSET);
+    }
+
+    @Override
+    protected void createBlockStateDefinition(StateDefinition.@NotNull Builder<Block, BlockState> builder) {
+        builder.add(X_OFFSET);
+        builder.add(Y_OFFSET);
+        builder.add(Z_OFFSET);
+        builder.add(NX_OFFSET);
+        builder.add(NY_OFFSET);
+        builder.add(NZ_OFFSET);
+        builder.add(ENERGY);
+        builder.add(FLUID);
+        super.createBlockStateDefinition(builder);
     }
 }

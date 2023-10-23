@@ -1,7 +1,9 @@
 package dev.andrewd1.something.block.entity.custom;
 
+import dev.andrewd1.something.block.ModBlocks;
 import dev.andrewd1.something.block.MultiBlockMachine;
 import dev.andrewd1.something.block.custom.EmptyBlock;
+import dev.andrewd1.something.block.entity.ModBlockEntities;
 import dev.andrewd1.something.util.ModEnergyStorage;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -21,28 +23,25 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Objects;
 
-public class EmptyBlockEntity extends BlockEntity implements MenuProvider {
+public class EmptyBlockEntity extends BlockEntity {
     private LazyOptional<IEnergyStorage> lazyEnergyHandler = LazyOptional.empty();
     public final BlockPos originPos;
     public final BlockState origin;
-    public final MultiBlockMachine originEntity;
+    public final MultiBlockMachine originMachine;
     private final ModEnergyStorage ENERGY_STORAGE = new ModEnergyStorage() {
         @Override
         public void onEnergyChanged() {
-            BlockEntity originEntity = Objects.requireNonNull(getLevel()).getBlockEntity(originPos);
-            if (originEntity instanceof MultiBlockMachine originMachine) {
-                originMachine.setOriginPower(getEnergyStored());
-            }
+            originMachine.setOriginPower(getEnergyStored());
             setChanged();
         }
     };
 
-    public EmptyBlockEntity(BlockEntityType<?> pType, BlockPos pPos, BlockState pBlockState) {
-        super(pType, pPos, pBlockState);
+    public EmptyBlockEntity(BlockPos pPos, BlockState pBlockState) {
+        super(ModBlockEntities.EMPTY_BE.get(), pPos, pBlockState);
         assert level != null;
         originPos = pPos.offset(pBlockState.getValue(EmptyBlock.X_OFFSET), pBlockState.getValue(EmptyBlock.Y_OFFSET), pBlockState.getValue(EmptyBlock.Z_OFFSET));
         origin = level.getBlockState(originPos);
-        originEntity = (MultiBlockMachine) level.getBlockEntity(originPos);
+        originMachine = (MultiBlockMachine) level.getBlockState(originPos).getBlock();
     }
 
     @Override
@@ -64,15 +63,5 @@ public class EmptyBlockEntity extends BlockEntity implements MenuProvider {
     public void invalidateCaps() {
         super.invalidateCaps();
         lazyEnergyHandler.invalidate();
-    }
-
-    public @NotNull Component getDisplayName() {
-        return originEntity.getDisplayName();
-    }
-
-    @Nullable
-    @Override
-    public AbstractContainerMenu createMenu(int pContainerId, @NotNull Inventory pPlayerInventory, @NotNull Player pPlayer) {
-        return originEntity.createMenu(pContainerId, pPlayerInventory, pPlayer);
     }
 }

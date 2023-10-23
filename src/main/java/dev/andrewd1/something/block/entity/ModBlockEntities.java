@@ -13,9 +13,10 @@ public class ModBlockEntities {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES =
             DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, SomethingMod.MOD_ID);
 
-//    public static final RegistryObject<BlockEntityType<EmptyBlockEntity>> EMPTY_BLOCK_E =
-//            BLOCK_ENTITIES.register("empty_block_entity", () ->
-//                    BlockEntityType.Builder.of(() -> new EmptyBlockEntity(), ModBlocks.EMPTY_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<EmptyBlockEntity>> EMPTY_BE =
+            BLOCK_ENTITIES.register("empty_be", () ->
+                    BlockEntityType.Builder.of(EmptyBlockEntity::new,
+                            ModBlocks.EMPTY_BLOCK.get()).build(null));
 
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);

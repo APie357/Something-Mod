@@ -2,6 +2,7 @@ package dev.andrewd1.something;
 
 import com.mojang.logging.LogUtils;
 import dev.andrewd1.something.block.ModBlocks;
+import dev.andrewd1.something.block.entity.ModBlockEntities;
 import dev.andrewd1.something.effect.ModEffects;
 import dev.andrewd1.something.item.ModCreativeTabs;
 import dev.andrewd1.something.item.ModItems;
@@ -42,6 +43,8 @@ public class SomethingMod {
         ModItems.register(eventBus);
         LOGGER.info("Registering blocks...");
         ModBlocks.register(eventBus);
+        LOGGER.info("Registering block entities...");
+        ModBlockEntities.register(eventBus);
         LOGGER.info("Registering POIs...");
         ModPOIs.register(eventBus);
         LOGGER.info("Registering dimensions...");
